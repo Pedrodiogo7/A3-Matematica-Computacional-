@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semáforo Inteligente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🚦 Sistema de Semáforo Inteligente</h1>
+      <p>Projeto A3 - Matemática Computacional Aplicada</p>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>🔘 Entradas</h2>
+
+        <label><input type="checkbox" id="viaA"> Veículos na Via A</label>
+        <label><input type="checkbox" id="viaB"> Veículos na Via B</label>
+        <label><input type="checkbox" id="pedestre"> Pedestre aguardando</label>
+
+        <button onclick="calcularSemaforo()">Calcular Estado</button>
+        <button class="secondary" onclick="modoAutomatico()">Modo Automático</button>
+      </div>
+
+      <div class="card destaque">
+        <h2>🧠 Decisão do Sistema</h2>
+        <p><b>Estado:</b> <span id="estado">S0</span></p>
+        <p><b>Binário:</b> <span id="binario">100001</span></p>
+        <p><b>Regra lógica:</b> <span id="regra">¬A ∧ ¬B ∧ ¬P → S0</span></p>
+        <p><b>Explicação:</b> <span id="descricao">Ciclo padrão: Via A liberada.</span></p>
+      </div>
+    </section>
+
+    <section class="semaforos">
+      <div class="semaforo-card">
+        <h3>Via A</h3>
+        <div class="semaforo">
+          <div id="a-verde" class="luz"></div>
+          <div id="a-amarelo" class="luz"></div>
+          <div id="a-vermelho" class="luz"></div>
+        </div>
+      </div>
+
+      <div class="semaforo-card">
+        <h3>Via B</h3>
+        <div class="semaforo">
+          <div id="b-verde" class="luz"></div>
+          <div id="b-amarelo" class="luz"></div>
+          <div id="b-vermelho" class="luz"></div>
+        </div>
+      </div>
+
+      <div class="semaforo-card">
+        <h3>Pedestre</h3>
+        <div class="semaforo pedestre">
+          <div id="p-verde" class="luz"></div>
+          <div id="p-vermelho" class="luz"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📊 Tabela-Verdade Interativa</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>P</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="linha-000"><td>0</td><td>0</td><td>0</td><td>S0 - Via A Verde</td></tr>
+          <tr id="linha-001"><td>0</td><td>0</td><td>1</td><td>S4 - Pedestre Verde</td></tr>
+          <tr id="linha-010"><td>0</td><td>1</td><td>0</td><td>S2 - Via B Verde</td></tr>
+          <tr id="linha-011"><td>0</td><td>1</td><td>1</td><td>S4 - Pedestre Verde</td></tr>
+          <tr id="linha-100"><td>1</td><td>0</td><td>0</td><td>S0 - Via A Verde</td></tr>
+          <tr id="linha-101"><td>1</td><td>0</td><td>1</td><td>S4 - Pedestre Verde</td></tr>
+          <tr id="linha-110"><td>1</td><td>1</td><td>0</td><td>Alterna entre S0 e S2</td></tr>
+          <tr id="linha-111"><td>1</td><td>1</td><td>1</td><td>S4 - Pedestre Verde</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

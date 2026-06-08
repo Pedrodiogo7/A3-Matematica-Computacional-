@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #1e3a8a, #020617);
+  color: white;
+}
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 30px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #cbd5e1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.card, .semaforo-card {
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+.destaque {
+  border-color: #38bdf8;
+}
+
+label {
+  display: block;
+  margin: 18px 0;
+  font-size: 18px;
+}
+
+input {
+  transform: scale(1.4);
+  margin-right: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #22c55e;
+  color: #052e16;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.15);
+}
+
+.secondary {
+  background: #38bdf8;
+  color: #082f49;
+}
+
+span {
+  color: #38bdf8;
+}
+
+.semaforos {
+  display: flex;
+  gap: 22px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.semaforo-card {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+}
+
+.semaforo {
+  background: #020617;
+  width: 95px;
+  margin: auto;
+  padding: 16px;
+  border-radius: 35px;
+}
+
+.luz {
+  width: 60px;
+  height: 60px;
+  background: #1e293b;
+  border-radius: 50%;
+  margin: 13px auto;
+  box-shadow: inset 0 0 12px #000;
+}
+
+.verde {
+  background: #22c55e;
+  box-shadow: 0 0 30px #22c55e;
+  animation: pulse 1s infinite;
+}
+
+.amarelo {
+  background: #facc15;
+  box-shadow: 0 0 30px #facc15;
+  animation: pulse 1s infinite;
+}
+
+.vermelho {
+  background: #ef4444;
+  box-shadow: 0 0 30px #ef4444;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #334155;
+  padding: 13px;
+  text-align: center;
+}
+
+th {
+  background: #1e293b;
+  color: #38bdf8;
+}
+
+tr:hover {
+  background: #1e293b;
+}
+
+.ativo {
+  background: #14532d !important;
+  color: #bbf7d0;
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
